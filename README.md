@@ -1,1 +1,1 @@
-# java-samples
+# java-practice
