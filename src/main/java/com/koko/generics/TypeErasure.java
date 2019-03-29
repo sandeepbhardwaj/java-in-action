@@ -61,6 +61,8 @@ public class TypeErasure {
 			System.out.println(ex);
 		}
 
+		TypeErasure instance = new TypeErasure();
+
 		MyList<Integer> list1 = new MyList<>();
 		MyList<Integer> list2 = new MyList<>();
 		MyList<Double> list3 = new MyList<>();
@@ -74,6 +76,18 @@ public class TypeErasure {
 		// System.out.println(MyClass<Integer>.getCount());
 		System.out.println("MyClass.getCount() " + MyList.getCount());
 
+	}
+
+	static class MyList<T> {
+		private static int count; // Not different for each parametric type
+
+		public MyList() {
+			count++;
+		}
+
+		public static int getCount() {
+			return count;
+		}
 	}
 
 }
@@ -91,15 +105,3 @@ class MyEvent implements Event<String> {
  * </pre>
  */
 //class MyEvent2 implements Event<String>, Event<Integer> {} // not allowed
-
-class MyList<T> {
-	private static int count; // Not different for each parametric type
-
-	public MyList() {
-		count++;
-	}
-
-	public static int getCount() {
-		return count;
-	}
-}
