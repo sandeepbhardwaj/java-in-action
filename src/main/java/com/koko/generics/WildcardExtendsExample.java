@@ -2,7 +2,7 @@ package com.koko.generics;
 
 import java.util.List;
 
-public class Sample {
+public class WildcardExtendsExample {
 
 	public static <T extends Comparable<T>> void copy(List<T> source, List<T> target) {
 		// the below line works only if <T extends Comparable>

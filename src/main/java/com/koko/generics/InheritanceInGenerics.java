@@ -3,26 +3,9 @@ package com.koko.generics;
 import java.util.ArrayList;
 import java.util.List;
 
-class Fruit {
-	@Override
-	public String toString() {
-		return "Fruit";
-	}
-}
-
-class Banana extends Fruit {
-	@Override
-	public String toString() {
-		return "Banana";
-	}
-}
-
-class Orange extends Fruit {
-	@Override
-	public String toString() {
-		return "Orange";
-	}
-}
+import com.koko.generics.model.Banana;
+import com.koko.generics.model.Fruit;
+import com.koko.generics.model.Orange;
 
 public class InheritanceInGenerics {
 
@@ -54,6 +37,10 @@ public class InheritanceInGenerics {
 		basketOfBanana.add(banana);
 		/*-
 		 * useFruitBasket(List<Fruit>) in the type InheritanceInGenerics is not applicable for the arguments (List<Banana>)
+		 * 
+		 * Banana extend from Fruit
+		 * but
+		 * List<Banana> does not extend from List<Fruit>
 		 * 
 		 */
 		// useFruitBasket(basketOfBanana); // will not compile
