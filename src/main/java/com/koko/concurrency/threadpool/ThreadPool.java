@@ -5,8 +5,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ThreadPool {
     private LinkedBlockingQueue<Runnable> queue;
 
-    public ThreadPool(int queueSize, int nThreads) {
-        queue = new LinkedBlockingQueue<>(queueSize);
+    public ThreadPool(int nThreads) {
+        queue = new LinkedBlockingQueue<>(nThreads);
 
         // create worker threads
         for (int i = 0; i < nThreads; i++) {
