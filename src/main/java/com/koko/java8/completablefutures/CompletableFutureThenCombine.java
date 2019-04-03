@@ -8,9 +8,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * <pre>
- * 
+ *
  * public <U,V> CompletableFuture<V> thenCombine(CompletionStage<? extends U> other,
-												BiFunction<? super T,? super U,? extends V> fn)
+ * BiFunction<? super T,? super U,? extends V> fn)
  * </pre>
  */
 public class CompletableFutureThenCombine {

@@ -37,11 +37,11 @@ public class InheritanceInGenerics {
 		basketOfBanana.add(banana);
 		/*-
 		 * useFruitBasket(List<Fruit>) in the type InheritanceInGenerics is not applicable for the arguments (List<Banana>)
-		 * 
+		 *
 		 * Banana extend from Fruit
 		 * but
 		 * List<Banana> does not extend from List<Fruit>
-		 * 
+		 *
 		 */
 		// useFruitBasket(basketOfBanana); // will not compile
 

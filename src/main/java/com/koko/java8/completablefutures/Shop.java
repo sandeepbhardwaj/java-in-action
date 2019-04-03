@@ -36,7 +36,7 @@ public class Shop {
 
 	/**
 	 * Simple get price without using future
-	 * 
+	 *
 	 * @param product
 	 * @return
 	 */
@@ -46,7 +46,7 @@ public class Shop {
 
 	/**
 	 * Converting synchronous method to asynchronous
-	 * 
+	 *
 	 * @param product
 	 * @return future
 	 */
@@ -65,7 +65,7 @@ public class Shop {
 
 	/**
 	 * Creating a CompletableFuture with the supplyAsync factory method
-	 * 
+	 *
 	 * @param product
 	 * @return
 	 */

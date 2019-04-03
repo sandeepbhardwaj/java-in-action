@@ -18,11 +18,11 @@ public class WildcardSuperExample {
 
 	/*-
 	 * banana can be copied to basket of fruits
-	 * banana can be copied to  basket of banana 
+	 * banana can be copied to  basket of banana
 	 * banana can be copied to any super class of banana
-	 * 
+	 *
 	 * basket of fruits can have banana but basket of banana can't have other fruits
-	 * 
+	 *
 	 */
 	public static <T> void genericCopy(List<T> src, List<? super T> target) {
 		for (T e : src) {

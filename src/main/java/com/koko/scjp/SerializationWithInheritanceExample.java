@@ -51,7 +51,7 @@ public class SerializationWithInheritanceExample {
 
 		// Serializing B's(subclass) object
 		try (FileOutputStream fos = new FileOutputStream("abc.ser");
-				ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+			 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 			// Method for serialization of B's class object
 			oos.writeObject(b1);
 		}

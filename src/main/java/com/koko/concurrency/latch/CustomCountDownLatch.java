@@ -2,9 +2,8 @@ package com.koko.concurrency.latch;
 
 /**
  * Custom CoundDownLach implementation
- * 
- * @author sandeep
  *
+ * @author sandeep
  */
 public class CustomCountDownLatch {
 	int counter;

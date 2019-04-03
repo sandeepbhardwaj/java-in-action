@@ -5,18 +5,17 @@ import java.util.List;
 
 /**
  * <pre>
- * - Effects of erasures and related gotchas 
- * 		- parametrized types can't be primitives 
- * 		- can't instantiate parameteric types - multiple parametrized interfaces restriction 
- * 		- Still can result in runtime exceptions - backward compatibility 
- * 		- unboxing 
- * 		- mixed with autoboxing, can get confusing 
- * 		- static fields are not what we may think they are 
+ * - Effects of erasures and related gotchas
+ * 		- parametrized types can't be primitives
+ * 		- can't instantiate parameteric types - multiple parametrized interfaces restriction
+ * 		- Still can result in runtime exceptions - backward compatibility
+ * 		- unboxing
+ * 		- mixed with autoboxing, can get confusing
+ * 		- static fields are not what we may think they are
  * 		- use caution with equality
  * </pre>
- * 
- * @author sandeep
  *
+ * @author sandeep
  */
 public class TypeErasure {
 

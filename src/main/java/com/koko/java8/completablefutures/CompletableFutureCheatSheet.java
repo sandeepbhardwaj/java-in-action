@@ -5,21 +5,21 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * <pre>
- * 
+ *
  * public static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
- * 
+ *
  * public static CompletableFuture<Void> runAsync(Runnable runnable)
- * 
+ *
  * public static <U> CompletableFuture<U> completedFuture(U value)
- * 
+ *
  * public T join()
- * 
+ *
  * public T getNow(T valueIfAbsent)
- * 
+ *
  * public <U> CompletableFuture<U> thenApply(Function<? super T,? extends U> fn)
- * 
+ *
  * public CompletableFuture<Void> thenAccept(Consumer<? super T> action)
- * 
+ *
  * public CompletableFuture<Void> thenRun(Runnable action)
  * </pre>
  */

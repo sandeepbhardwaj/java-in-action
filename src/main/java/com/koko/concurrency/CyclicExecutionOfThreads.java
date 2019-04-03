@@ -15,13 +15,13 @@ public class CyclicExecutionOfThreads {
 		/*
 		 * MyRunnable runnable = new MyRunnable(printJob, 1); Thread t1 = new
 		 * Thread(runnable);
-		 * 
+		 *
 		 * MyRunnable runnable2 = new MyRunnable(printJob, 2); Thread t2 = new
 		 * Thread(runnable2);
-		 * 
+		 *
 		 * MyRunnable runnable3 = new MyRunnable(printJob, 3); Thread t3 = new
 		 * Thread(runnable3);
-		 * 
+		 *
 		 * t1.start(); t2.start(); t3.start();
 		 */
 

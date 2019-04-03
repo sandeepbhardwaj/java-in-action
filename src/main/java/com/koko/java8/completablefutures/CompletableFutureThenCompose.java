@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * <pre>
- * 
+ *
  * public <U> CompletableFuture<U> thenComposeAsync(Function<? super T,? extends CompletionStage<U>> fn)
  * </pre>
  */
