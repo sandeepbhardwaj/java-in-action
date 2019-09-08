@@ -11,7 +11,6 @@ public class ThreadPoolTester {
 			pool.execute(new Task(i + ""));
 		}
 	}
-
 }
 
 class Task implements Runnable {

@@ -19,5 +19,4 @@ public class Party implements Runnable {
 			e.printStackTrace();
 		}
 	}
-
 }

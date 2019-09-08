@@ -26,13 +26,13 @@ public class Apple {
 		this.color = color;
 	}
 
-	public enum Color {
-		RED, GREEN;
-	}
-
 	@Override
 	public String toString() {
 		return "Apple [weight=" + weight + ", color=" + color + "]";
 	}
 
+	public enum Color {
+		RED,
+		GREEN;
+	}
 }

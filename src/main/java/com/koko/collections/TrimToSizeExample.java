@@ -18,5 +18,4 @@ public class TrimToSizeExample {
 			System.out.println("Number = " + number);
 		}
 	}
-
 }

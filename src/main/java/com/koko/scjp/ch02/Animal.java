@@ -5,10 +5,6 @@ public class Animal {
 		System.out.print("a ");
 	}
 
-	void doStuff2() {
-		System.out.print("a ");
-	}
-
 	public static void main(String[] args) {
 		Animal[] a = {new Animal(), new Dog(), new Animal()};
 		for (int x = 0; x < a.length; x++) {
@@ -20,6 +16,10 @@ public class Animal {
 		for (int x = 0; x < a.length; x++) {
 			a[x].doStuff2();
 		}
+	}
+
+	void doStuff2() {
+		System.out.print("a ");
 	}
 }
 

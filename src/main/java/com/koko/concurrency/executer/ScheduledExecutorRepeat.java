@@ -14,31 +14,32 @@ public class ScheduledExecutorRepeat {
 
 	public static void main(String[] args) throws InterruptedException {
 
-	    String strDateFormat = "hh:mm:ss a";
-	    DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+		String strDateFormat = "hh:mm:ss a";
+		DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
 
-	    
 		ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
 
-		Runnable task1 = () -> {
-			System.out.println("ScheduledExecutorRepeat.main()");
-			count++;
-			if (count == 2) {
-				try {
-					TimeUnit.SECONDS.sleep(4);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			System.out.println("Running...task1 - count : " + count +" time"+dateFormat.format(new Date()));
-		};
+		Runnable task1 =
+				() -> {
+					System.out.println("ScheduledExecutorRepeat.main()");
+					count++;
+					if (count == 2) {
+						try {
+							TimeUnit.SECONDS.sleep(4);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					System.out.println(
+							"Running...task1 - count : " + count + " time" + dateFormat.format(new Date()));
+				};
 
 		// init Delay = 5, repeat the task every 1 second
 		ScheduledFuture<?> scheduledFuture = ses.scheduleAtFixedRate(task1, 5, 2, TimeUnit.SECONDS);
 
 		while (true) {
-			//System.out.println("count :" + count);
+			// System.out.println("count :" + count);
 			Thread.sleep(1000);
 			if (count == 5) {
 				System.out.println("Count is 5, cancel the scheduledFuture!");
@@ -47,6 +48,5 @@ public class ScheduledExecutorRepeat {
 				break;
 			}
 		}
-
 	}
 }

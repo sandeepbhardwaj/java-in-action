@@ -9,5 +9,4 @@ public class VarArgsExample {
 
 	static void doStuff(int x, int... doArgs) {
 	}
-
 }

@@ -1,15 +1,10 @@
 package com.koko.scjp;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 
-//superclass A 
-//A class doesn't implement Serializable
-//interface.
+// superclass A
+// A class doesn't implement Serializable
+// interface.
 class A {
 	int i;
 
@@ -25,7 +20,6 @@ class A {
 		i = 50;
 		System.out.println("A's class constructor called");
 	}
-
 }
 
 // subclass B
@@ -62,17 +56,20 @@ public class SerializationWithInheritanceExample {
 		readObject();
 		readObject();
 		readObject();
-
 	}
 
 	static void readObject() {
 		// Reading the object from a file
-		try (FileInputStream fis = new FileInputStream("abc.ser"); ObjectInputStream ois = new ObjectInputStream(fis)) {
+		try (FileInputStream fis = new FileInputStream("abc.ser");
+			 ObjectInputStream ois = new ObjectInputStream(fis)) {
 			// Method for de-serialization of B's class object
 			B b2 = (B) ois.readObject();
 
 			System.out.println(
-					"HasCode of A:" + b2.getClass().getSuperclass().hashCode() + " | HasCode of B:" + b2.hashCode());
+					"HasCode of A:"
+							+ b2.getClass().getSuperclass().hashCode()
+							+ " | HasCode of B:"
+							+ b2.hashCode());
 
 			System.out.println("i = " + b2.i);
 			System.out.println("j = " + b2.j);

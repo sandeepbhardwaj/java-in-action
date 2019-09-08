@@ -1,12 +1,12 @@
 package com.koko.generics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.koko.generics.model.Banana;
 import com.koko.generics.model.Fruit;
 import com.koko.generics.model.GreenBanana;
 import com.koko.generics.model.Orange;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WildcardSuperExample {
 
@@ -67,7 +67,5 @@ public class WildcardSuperExample {
 		// genericCopy(basketOfBanana, greenBananaBasket); // NOT COMPILE
 		genericCopy(greenBananaBasket, basketOfBanana);
 		System.out.println("Elements in basketOfBanana after copy :" + basketOfBanana);
-
 	}
-
 }

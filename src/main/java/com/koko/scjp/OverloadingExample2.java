@@ -26,5 +26,4 @@ public class OverloadingExample2 {
 	static void add(Object a, Object b) {
 		System.out.println("Object");
 	}
-
 }

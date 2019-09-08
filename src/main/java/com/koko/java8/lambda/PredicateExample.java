@@ -1,12 +1,12 @@
 package com.koko.java8.lambda;
 
+import com.koko.java8.lambda.model.Apple;
+import com.koko.java8.lambda.model.Apple.Color;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
-
-import com.koko.java8.lambda.model.Apple;
-import com.koko.java8.lambda.model.Apple.Color;
 
 public class PredicateExample {
 	public static void main(String[] args) {
@@ -15,7 +15,6 @@ public class PredicateExample {
 		// filter all red apples
 		List<Apple> results = filter(apples, (Apple a) -> Color.RED.equals(a.getColor()));
 		results.forEach(System.out::println);
-
 	}
 
 	private static <E> List<E> filter(List<E> elements, Predicate<E> predicate) {

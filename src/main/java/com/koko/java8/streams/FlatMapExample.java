@@ -15,9 +15,12 @@ public class FlatMapExample {
 
 		// the flatMap method lets you replace each value of a stream with another
 		// stream and then concatenates all the generated streams into a single stream.
-		List<String> uniqueWords = words.stream().map(word -> word.split("")).flatMap(Arrays::stream).distinct()
-				.collect(Collectors.toList());
+		List<String> uniqueWords =
+				words.stream()
+						.map(word -> word.split(""))
+						.flatMap(Arrays::stream)
+						.distinct()
+						.collect(Collectors.toList());
 		uniqueWords.forEach(System.out::println);
 	}
-
 }

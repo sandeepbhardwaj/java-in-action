@@ -9,7 +9,6 @@ public class MessageQueue {
 	public void produceMessage(String message) {
 
 		synchronized (myMonitorObject) {
-
 			while (jobDone) {
 				try {
 					// System.out.println("Message Queue full, waiting for consumer..");
@@ -23,7 +22,6 @@ public class MessageQueue {
 			jobDone = true;
 			myMonitorObject.notify();
 		}
-
 	}
 
 	public void consumeMessage() {

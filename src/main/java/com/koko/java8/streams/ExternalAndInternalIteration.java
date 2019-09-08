@@ -1,11 +1,11 @@
 package com.koko.java8.streams;
 
+import com.koko.java8.streams.model.Dish;
+import com.koko.java8.streams.util.MenuProvider;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.koko.java8.streams.model.Dish;
-import com.koko.java8.streams.util.MenuProvider;
 
 public class ExternalAndInternalIteration {
 
@@ -27,5 +27,4 @@ public class ExternalAndInternalIteration {
 		dishNames = menu.stream().map(Dish::getName).collect(Collectors.toList());
 		dishNames.forEach(System.out::println);
 	}
-
 }

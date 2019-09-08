@@ -1,7 +1,5 @@
 package com.koko.concurrency;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -27,11 +25,11 @@ public class CyclicExecutionOfThreads {
 
 		// OR
 		ExecutorService executorService = Executors.newFixedThreadPool(totalNumOfThreads);
-		//Set<Runnable> runnables = new HashSet<Runnable>();
+		// Set<Runnable> runnables = new HashSet<Runnable>();
 
 		for (int i = 1; i <= totalNumOfThreads; i++) {
 			MyRunnable command = new MyRunnable(printJob, i);
-			//runnables.add(command);
+			// runnables.add(command);
 			executorService.execute(command);
 		}
 
@@ -75,7 +73,6 @@ class MyRunnable implements Runnable {
 					}
 				}
 			}
-
 		}
 	}
 }

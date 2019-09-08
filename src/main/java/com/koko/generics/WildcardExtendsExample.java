@@ -8,7 +8,6 @@ public class WildcardExtendsExample {
 		// the below line works only if <T extends Comparable>
 		if (target.get(0).compareTo(source.get(0)) != 0) {
 		}
-
 	}
 
 	public static void main(String[] args) {
@@ -24,5 +23,4 @@ public class WildcardExtendsExample {
 			System.out.println("adding...");
 		}
 	}
-
 }

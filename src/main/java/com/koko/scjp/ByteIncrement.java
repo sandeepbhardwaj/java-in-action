@@ -7,5 +7,4 @@ public class ByteIncrement {
 		b++;
 		System.out.println(b);
 	}
-
 }

@@ -1,10 +1,6 @@
 package com.koko.java8.completablefutures;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * <pre>
@@ -28,28 +24,31 @@ public class CompletableFutureThenCompose {
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
 
-		Executor executor = Executors.newFixedThreadPool(Math.min(10, 100), new ThreadFactory() {
+		Executor executor =
+				Executors.newFixedThreadPool(
+						Math.min(10, 100),
+						new ThreadFactory() {
 
-			@Override
-			public Thread newThread(Runnable r) {
-				Thread t = new Thread(r);
-				t.setDaemon(true);
-				return t;
-			}
-		});
+							@Override
+							public Thread newThread(Runnable r) {
+								Thread t = new Thread(r);
+								t.setDaemon(true);
+								return t;
+							}
+						});
 
 		// thenCombine - is executed with the two results as arguments to the supplied
 		// function
-		CompletableFuture<Integer> future = create(2, executor)
-				.thenCombineAsync(create(3, executor), (result1, result2) -> result1 + result2)
-				.thenCombineAsync(create(5, executor), (result3, result4) -> result3 + result4)
-				.thenCombineAsync(create(10, executor), (result3, result4) -> result3 + result4);
+		CompletableFuture<Integer> future =
+				create(2, executor)
+						.thenCombineAsync(create(3, executor), (result1, result2) -> result1 + result2)
+						.thenCombineAsync(create(5, executor), (result3, result4) -> result3 + result4)
+						.thenCombineAsync(create(10, executor), (result3, result4) -> result3 + result4);
 
 		System.out.println("Result :" + future.join());
 
 		long duration = (System.currentTimeMillis() - start) / 1_000;
 		System.out.println("Done in " + duration + " secs");
-
 	}
 
 	private static void sleep(int timeout) {
@@ -58,7 +57,5 @@ public class CompletableFutureThenCompose {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }

@@ -12,7 +12,6 @@ public class SemaphoreExample {
 		new Thread(new Task(semaphore)).start();
 		new Thread(new Task(semaphore)).start();
 	}
-
 }
 
 class Task implements Runnable {
@@ -37,5 +36,4 @@ class Task implements Runnable {
 			System.out.println(Thread.currentThread().getName() + " released");
 		}
 	}
-
 }

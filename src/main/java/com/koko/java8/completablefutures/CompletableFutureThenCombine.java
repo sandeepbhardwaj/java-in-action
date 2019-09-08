@@ -1,10 +1,6 @@
 package com.koko.java8.completablefutures;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
 
 /**
  * <pre>
@@ -28,13 +24,13 @@ public class CompletableFutureThenCombine {
 		// that returns a CompletableFuture). It will then return a future with the
 		// result directly, rather than a nested future.
 
-		CompletableFuture.supplyAsync(() -> 1).thenCompose(x -> CompletableFuture.supplyAsync(() -> x + 1))
+		CompletableFuture.supplyAsync(() -> 1)
+				.thenCompose(x -> CompletableFuture.supplyAsync(() -> x + 1))
 				.thenAccept(data -> System.out.println(data));
 
 		create(2)
 				// .thenApply(data -> increment(data))
-				.thenCompose(data -> increment(data)).thenAccept(data -> System.out.println(data));
-
+				.thenCompose(data -> increment(data))
+				.thenAccept(data -> System.out.println(data));
 	}
-
 }

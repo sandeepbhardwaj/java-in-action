@@ -2,6 +2,10 @@ package com.koko.java8;
 
 public class DefaultInterfaceExample implements Interface1, Interface2 {
 
+	public static void main(String[] args) {
+		// new DefaultInterfaceExample().log("xyz");
+	}
+
 	@Override
 	public void method2() {
 	}
@@ -14,9 +18,5 @@ public class DefaultInterfaceExample implements Interface1, Interface2 {
 	public void log(String str) {
 		System.out.println("MyClass logging::" + str);
 		Interface1.log("abc");
-	}
-
-	public static void main(String[] args) {
-		//new DefaultInterfaceExample().log("xyz");
 	}
 }

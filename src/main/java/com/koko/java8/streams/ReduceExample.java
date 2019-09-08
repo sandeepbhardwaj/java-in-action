@@ -36,5 +36,4 @@ public class ReduceExample {
 		sum = numbers.stream().reduce(0, Integer::sum);
 		System.out.println("Sum is :" + sum);
 	}
-
 }

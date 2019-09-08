@@ -12,6 +12,5 @@ public class TestAnnotation {
 		for (String error : errors) {
 			System.out.println(error);
 		}
-
 	}
 }

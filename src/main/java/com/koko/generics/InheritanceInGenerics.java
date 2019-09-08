@@ -1,11 +1,11 @@
 package com.koko.generics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.koko.generics.model.Banana;
 import com.koko.generics.model.Fruit;
 import com.koko.generics.model.Orange;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InheritanceInGenerics {
 
@@ -46,5 +46,4 @@ public class InheritanceInGenerics {
 		// useFruitBasket(basketOfBanana); // will not compile
 
 	}
-
 }

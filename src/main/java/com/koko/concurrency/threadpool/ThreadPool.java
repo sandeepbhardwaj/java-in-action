@@ -22,7 +22,6 @@ public class ThreadPool {
 		}
 	}
 
-
 	/**
 	 * WorkerThread class to take the tasks from queue and perform the task
 	 */

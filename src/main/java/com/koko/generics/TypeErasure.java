@@ -3,6 +3,9 @@ package com.koko.generics;
 import java.util.ArrayList;
 import java.util.List;
 
+interface Event<T> {
+}
+
 /**
  * <pre>
  * - Effects of erasures and related gotchas
@@ -74,7 +77,6 @@ public class TypeErasure {
 		// Notice the class name here does not include any parametric type
 		// System.out.println(MyClass<Integer>.getCount());
 		System.out.println("MyClass.getCount() " + MyList.getCount());
-
 	}
 
 	static class MyList<T> {
@@ -88,10 +90,6 @@ public class TypeErasure {
 			return count;
 		}
 	}
-
-}
-
-interface Event<T> {
 }
 
 class MyEvent implements Event<String> {
@@ -103,4 +101,4 @@ class MyEvent implements Event<String> {
  * 		- you can't implement same interface again in java this is valid here as well due to type erasure
  * </pre>
  */
-//class MyEvent2 implements Event<String>, Event<Integer> {} // not allowed
+// class MyEvent2 implements Event<String>, Event<Integer> {} // not allowed

@@ -28,9 +28,18 @@ public class Shop {
 		System.out.println("Retrieval return after :" + retrievalTime + " msecs");
 	}
 
+	public static void delay() {
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public String getPriceWithDiscount(String product) {
 		double price = calculatePrice(product);
-		Discount.Code code = Discount.Code.values()[new Random().nextInt(Discount.Code.values().length)];
+		Discount.Code code =
+				Discount.Code.values()[new Random().nextInt(Discount.Code.values().length)];
 		return String.format("%s:%.2f:%s", name, price, code);
 	}
 
@@ -52,14 +61,16 @@ public class Shop {
 	 */
 	public Future<Double> getPriceAsync(String product) {
 		CompletableFuture<Double> future = new CompletableFuture<>();
-		new Thread(() -> {
-			try {
-				double price = calculatePrice(product);
-				future.complete(price);
-			} catch (Exception e) {
-				future.completeExceptionally(e); // handling exception and return back
-			}
-		}).start();
+		new Thread(
+				() -> {
+					try {
+						double price = calculatePrice(product);
+						future.complete(price);
+					} catch (Exception e) {
+						future.completeExceptionally(e); // handling exception and return back
+					}
+				})
+				.start();
 		return future;
 	}
 
@@ -76,14 +87,6 @@ public class Shop {
 	private double calculatePrice(String product) {
 		delay();
 		return new Random().nextDouble() * product.charAt(0) + product.charAt(1);
-	}
-
-	public static void delay() {
-		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
 	}
 
 	public String getName() {

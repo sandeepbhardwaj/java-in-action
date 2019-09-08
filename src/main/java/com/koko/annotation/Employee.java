@@ -6,7 +6,6 @@ public class Employee {
 	private String address;
 
 	public Employee() {
-
 	}
 
 	public Employee(String name, String address) {

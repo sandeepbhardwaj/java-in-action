@@ -26,5 +26,4 @@ public class CyclicBarrierExample {
 		new Thread(new Party(barrier)).start();
 		new Thread(new Party(barrier)).start();
 	}
-
 }

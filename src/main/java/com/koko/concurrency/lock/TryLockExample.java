@@ -9,5 +9,4 @@ public class TryLockExample {
 		new Thread(new Worker(task)).start();
 		new Thread(new Worker(task)).start();
 	}
-
 }

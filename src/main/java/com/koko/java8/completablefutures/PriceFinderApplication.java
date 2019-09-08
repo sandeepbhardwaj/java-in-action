@@ -12,8 +12,13 @@ import static java.util.stream.Collectors.toList;
 public class PriceFinderApplication {
 
 	public static void main(String arg[]) {
-		List<Shop> shops = Arrays.asList(new Shop("BestPrice"), new Shop("LetsSaveBig"), new Shop("MyFavoriteShop"),
-				new Shop("BuyItAll"), new Shop("Alibaba"));
+		List<Shop> shops =
+				Arrays.asList(
+						new Shop("BestPrice"),
+						new Shop("LetsSaveBig"),
+						new Shop("MyFavoriteShop"),
+						new Shop("BuyItAll"),
+						new Shop("Alibaba"));
 
 		// using stream it will take time more than 4+ sec
 		long start = System.nanoTime();
@@ -30,36 +35,46 @@ public class PriceFinderApplication {
 		start = System.nanoTime();
 		System.out.println(findPricesAsynchronously(shops, "myPhone27S"));
 		System.out.println("Done in " + (System.nanoTime() - start) / 1_000_000 + " msecs");
-
 	}
 
 	private static List<String> findPricesUsingParallelStream(List<Shop> shops, String product) {
-		return shops.parallelStream()
+		return shops
+				.parallelStream()
 				.map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
 				.collect(toList());
 	}
 
 	public static List<String> findPrices(List<Shop> shops, String product) {
-		return shops.stream().map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
+		return shops.stream()
+				.map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
 				.collect(toList());
 	}
 
 	public static List<String> findPricesAsynchronously(List<Shop> shops, String product) {
 
-		Executor executor = Executors.newFixedThreadPool(Math.min(shops.size(), 100), new ThreadFactory() {
+		Executor executor =
+				Executors.newFixedThreadPool(
+						Math.min(shops.size(), 100),
+						new ThreadFactory() {
 
-			@Override
-			public Thread newThread(Runnable r) {
-				Thread t = new Thread(r);
-				t.setDaemon(true);
-				return t;
-			}
-		});
+							@Override
+							public Thread newThread(Runnable r) {
+								Thread t = new Thread(r);
+								t.setDaemon(true);
+								return t;
+							}
+						});
 
-		List<CompletableFuture<String>> priceFutures = shops.stream()
-				.map(shop -> CompletableFuture.supplyAsync(
-						() -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)), executor))
-				.collect(toList());
+		List<CompletableFuture<String>> priceFutures =
+				shops.stream()
+						.map(
+								shop ->
+										CompletableFuture.supplyAsync(
+												() ->
+														String.format(
+																"%s price is %.2f", shop.getName(), shop.getPrice(product)),
+												executor))
+						.collect(toList());
 
 		return priceFutures.stream().map(CompletableFuture::join).collect(toList());
 	}
