@@ -51,13 +51,11 @@ public class CompletableFutureCheatSheet {
 		// getNow - Returns the result value if completed, else returns the given
 		// valueIfAbsent.
 		// thenApply/thenApplyAsync -> to transform the result like map of stream
-		int output =
-				CompletableFuture.supplyAsync(() -> compute(2)).thenApply(data -> data + 1).getNow(4);
+		int output = CompletableFuture.supplyAsync(() -> compute(2)).thenApply(data -> data + 1).getNow(4);
 		System.out.println("Result using getNow :" + output);
 
 		// thenRun - executes the given action
-		CompletableFuture.supplyAsync(() -> "Hello World")
-				.thenAccept(data -> System.out.println(data))
+		CompletableFuture.supplyAsync(() -> "Hello World").thenAccept(data -> System.out.println(data))
 				.thenRun(() -> System.out.println("Done !!!"));
 	}
 

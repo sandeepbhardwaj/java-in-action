@@ -12,12 +12,10 @@ public class FilterAnElement {
 	}
 
 	public static void pickName(final List<String> names, final String startingLetter) {
-		final Optional<String> foundName =
-				names.stream().filter(name -> name.startsWith(startingLetter)).findFirst();
+		final Optional<String> foundName = names.stream().filter(name -> name.startsWith(startingLetter)).findFirst();
 
 		System.out.println(
-				String.format(
-						"A name starting with %s: %s", startingLetter, foundName.orElse("No name found")));
+				String.format("A name starting with %s: %s", startingLetter, foundName.orElse("No name found")));
 	}
 
 	public static void pickName2(final List<String> names, final String startingLetter) {

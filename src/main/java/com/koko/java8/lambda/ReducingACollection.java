@@ -8,7 +8,6 @@ public class ReducingACollection {
 		final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
 
 		System.out.println(
-				"Total number of characters in all names: "
-						+ friends.stream().mapToInt(name -> name.length()).sum());
+				"Total number of characters in all names: " + friends.stream().mapToInt(name -> name.length()).sum());
 	}
 }

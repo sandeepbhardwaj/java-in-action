@@ -9,7 +9,8 @@ public class RemovingDuplicationWithLexicalScoping {
 	public static void main(String[] args) {
 		final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
 
-		// 1. the two predicates are mere duplicates, with only the letter they use being different
+		// 1. the two predicates are mere duplicates, with only the letter they use
+		// being different
 		final Predicate<String> startsWithN = name -> name.startsWith("N");
 		final Predicate<String> startsWithB = name -> name.startsWith("B");
 		long countFriendsStartN = friends.stream().filter(startsWithN).count();
@@ -20,11 +21,10 @@ public class RemovingDuplicationWithLexicalScoping {
 		countFriendsStartB = friends.stream().filter(checkIfStartsWith("B")).count();
 
 		// 3. Refactoring to Narrow the Scope
-		Function<String, Predicate<String>> startsWithLetter =
-				(String letter) -> {
-					Predicate<String> checkStarts = (String name) -> name.startsWith(letter);
-					return checkStarts;
-				};
+		Function<String, Predicate<String>> startsWithLetter = (String letter) -> {
+			Predicate<String> checkStarts = (String name) -> name.startsWith(letter);
+			return checkStarts;
+		};
 
 		startsWithLetter = (String letter) -> (String name) -> name.startsWith(letter);
 
@@ -35,8 +35,8 @@ public class RemovingDuplicationWithLexicalScoping {
 	}
 
 	/**
-	 * From within a lambda expression we can only access local variables that are final or
-	 * effectively final in the enclosing scope
+	 * From within a lambda expression we can only access local variables that are
+	 * final or effectively final in the enclosing scope
 	 *
 	 * @param letter
 	 * @return

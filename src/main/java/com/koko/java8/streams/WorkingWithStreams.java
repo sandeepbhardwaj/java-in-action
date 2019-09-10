@@ -13,8 +13,8 @@ public class WorkingWithStreams {
 
 		System.out.println("============Filtering a stream with a predicate============");
 		// Filtering a stream with a predicate
-		List<String> vegDishes =
-				menu.stream().filter(Dish::isVegetarian).map(Dish::getName).collect(Collectors.toList());
+		List<String> vegDishes = menu.stream().filter(Dish::isVegetarian).map(Dish::getName)
+				.collect(Collectors.toList());
 		vegDishes.forEach(System.out::println);
 
 		System.out.println("============Filtering unique elements using distinct============");
@@ -24,18 +24,13 @@ public class WorkingWithStreams {
 
 		System.out.println("============Truncating a stream using limit============");
 		// Truncating a stream using limit
-		List<String> threeHighCaloriesDishes =
-				menu.stream()
-						.filter(d -> d.getCalories() > 400)
-						.limit(3)
-						.map(Dish::getName)
-						.collect(Collectors.toList());
+		List<String> threeHighCaloriesDishes = menu.stream().filter(d -> d.getCalories() > 400).limit(3)
+				.map(Dish::getName).collect(Collectors.toList());
 		threeHighCaloriesDishes.forEach(System.out::println);
 
 		System.out.println("============Skipping elements using skip============");
 		// Skipping elements using skip
-		List<Dish> dishes =
-				menu.stream().filter(d -> d.getCalories() > 300).skip(2).collect(Collectors.toList());
+		List<Dish> dishes = menu.stream().filter(d -> d.getCalories() > 300).skip(2).collect(Collectors.toList());
 		dishes.forEach(System.out::println);
 	}
 }

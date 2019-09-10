@@ -1,8 +1,9 @@
 package com.koko.java8.design.strategy;
 
 public class Asset {
-	public enum AssetType {BOND, STOCK}
-
+	public enum AssetType {
+		BOND, STOCK
+	}
 
 	private final AssetType type;
 	private final int value;

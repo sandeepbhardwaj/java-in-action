@@ -19,12 +19,11 @@ public class TraverseElements {
 		}
 
 		// 3.
-		friends.forEach(
-				new Consumer<String>() {
-					public void accept(final String name) {
-						System.out.println(name);
-					}
-				});
+		friends.forEach(new Consumer<String>() {
+			public void accept(final String name) {
+				System.out.println(name);
+			}
+		});
 
 		// 4.
 		friends.forEach((final String name) -> System.out.println(name));

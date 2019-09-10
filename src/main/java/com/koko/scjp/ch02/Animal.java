@@ -6,7 +6,7 @@ public class Animal {
 	}
 
 	public static void main(String[] args) {
-		Animal[] a = {new Animal(), new Dog(), new Animal()};
+		Animal[] a = { new Animal(), new Dog(), new Animal() };
 		for (int x = 0; x < a.length; x++) {
 			a[x].doStuff(); // invoke the static method
 		}

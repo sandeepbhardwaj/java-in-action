@@ -11,8 +11,9 @@ public class ReusingLambdaExpressions {
 		final List<String> comrades = Arrays.asList("Kate", "Ken", "Nick", "Paula", "Zach");
 
 		/**
-		 * assign lambda expressions to variables and reuse them, just like with objects. filter()
-		 * method takes a reference to a java.util.function.Predicate functional interface.
+		 * assign lambda expressions to variables and reuse them, just like with
+		 * objects. filter() method takes a reference to a java.util.function.Predicate
+		 * functional interface.
 		 */
 		final Predicate<String> startsWithN = name -> name.startsWith("N");
 		final long countFriendsStartN = friends.stream().filter(startsWithN).count();

@@ -21,12 +21,12 @@ public class FilterElements {
 		startsWithN.clear();
 
 		/**
-		 * 2. filter() method expects a lambda expression that returns a boolean result. If the lambda
-		 * expression returns a true, the element in context while executing that lambda expression is
-		 * added to a result collection; it’s skipped otherwise.
+		 * 2. filter() method expects a lambda expression that returns a boolean result.
+		 * If the lambda expression returns a true, the element in context while
+		 * executing that lambda expression is added to a result collection; it’s
+		 * skipped otherwise.
 		 */
-		startsWithN =
-				friends.stream().filter(name -> name.startsWith("N")).collect(Collectors.toList());
+		startsWithN = friends.stream().filter(name -> name.startsWith("N")).collect(Collectors.toList());
 		System.out.println(String.format("Found %d names", startsWithN.size()));
 	}
 }

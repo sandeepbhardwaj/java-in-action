@@ -10,10 +10,7 @@ public class PrintList {
 		final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
 		System.out.println(String.join(", ", friends));
 
-		System.out.println(
-				friends.stream()
-						.map(String::toUpperCase)
-						.collect(joining(", ")));
+		System.out.println(friends.stream().map(String::toUpperCase).collect(joining(", ")));
 
 	}
 }

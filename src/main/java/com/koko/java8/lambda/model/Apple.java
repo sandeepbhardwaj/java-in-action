@@ -32,7 +32,6 @@ public class Apple {
 	}
 
 	public enum Color {
-		RED,
-		GREEN;
+		RED, GREEN;
 	}
 }

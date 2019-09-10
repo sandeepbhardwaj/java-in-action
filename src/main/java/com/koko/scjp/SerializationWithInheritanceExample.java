@@ -45,7 +45,7 @@ public class SerializationWithInheritanceExample {
 
 		// Serializing B's(subclass) object
 		try (FileOutputStream fos = new FileOutputStream("abc.ser");
-			 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+				ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 			// Method for serialization of B's class object
 			oos.writeObject(b1);
 		}
@@ -60,16 +60,12 @@ public class SerializationWithInheritanceExample {
 
 	static void readObject() {
 		// Reading the object from a file
-		try (FileInputStream fis = new FileInputStream("abc.ser");
-			 ObjectInputStream ois = new ObjectInputStream(fis)) {
+		try (FileInputStream fis = new FileInputStream("abc.ser"); ObjectInputStream ois = new ObjectInputStream(fis)) {
 			// Method for de-serialization of B's class object
 			B b2 = (B) ois.readObject();
 
 			System.out.println(
-					"HasCode of A:"
-							+ b2.getClass().getSuperclass().hashCode()
-							+ " | HasCode of B:"
-							+ b2.hashCode());
+					"HasCode of A:" + b2.getClass().getSuperclass().hashCode() + " | HasCode of B:" + b2.hashCode());
 
 			System.out.println("i = " + b2.i);
 			System.out.println("j = " + b2.j);
