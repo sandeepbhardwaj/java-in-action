@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * <pre>
- *
  * public static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
  *
  * public static CompletableFuture<Void> runAsync(Runnable runnable)
@@ -21,6 +20,7 @@ import java.util.concurrent.TimeUnit;
  * public CompletableFuture<Void> thenAccept(Consumer<? super T> action)
  *
  * public CompletableFuture<Void> thenRun(Runnable action)
+ * 
  * </pre>
  */
 public class CompletableFutureCheatSheet {
