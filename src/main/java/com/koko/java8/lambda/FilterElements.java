@@ -23,7 +23,7 @@ public class FilterElements {
 		/**
 		 * 2. filter() method expects a lambda expression that returns a boolean result.
 		 * If the lambda expression returns a true, the element in context while
-		 * executing that lambda expression is added to a result collection; it’s
+		 * executing that lambda expression is added to a result collection; it's
 		 * skipped otherwise.
 		 */
 		startsWithN = friends.stream().filter(name -> name.startsWith("N")).collect(Collectors.toList());
