@@ -32,14 +32,14 @@ public class PriceFinderApplication {
 		System.out.println("Done in " + (System.nanoTime() - start) / 1_000_000 + " msecs");
 	}
 
-	private static List<String> findPricesUsingParallelStream(List<Shop> shops, String product) {
-		return shops.parallelStream()
-				.map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
+	public static List<String> findPrices(List<Shop> shops, String product) {
+		return shops.stream().map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
 				.collect(toList());
 	}
 
-	public static List<String> findPrices(List<Shop> shops, String product) {
-		return shops.stream().map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
+	public static List<String> findPricesUsingParallelStream(List<Shop> shops, String product) {
+		return shops.parallelStream()
+				.map(shop -> String.format("%s price is %.2f", shop.getName(), shop.getPrice(product)))
 				.collect(toList());
 	}
 
